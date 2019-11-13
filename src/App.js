@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Login from './pages/login/login'
+import Admin from './pages/admin/admin'
+//import { Button, message } from 'antd' //只是加载引入组件的样式
+
+
+export default class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+
+        //this.handleClick = this.handleClick.bind(this)
+    }
+
+    // handleClick() {
+    //     message.success("success")
+    // }
+
+
+    render() {
+        return (
+            <BrowserRouter>
+                <Switch>{/**只匹配一个页面 ,这个文件就是的*/}
+                    <Route path='/login' component={Login}></Route>
+                    <Route path='/' component={Admin}></Route>
+                </Switch>
+            </BrowserRouter>
+        )
+    }
 }
 
-export default App;
+//一个路由是一个映射关系
+//一级路由，二级路由
