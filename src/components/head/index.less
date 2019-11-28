@@ -1,0 +1,50 @@
+.header {
+    height: 80px;
+    background-color: #ffffff;
+    .header-top {
+        height: 40px;
+        border-bottom: 1px solid #1da57a;
+        text-align: right;
+        line-height: 40px;
+        padding-right: 40px;
+        font-size: 15px;
+        span {
+            margin-right: 15px;
+        }
+    }
+
+    .header-bottom {
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        font-size: 16px;
+        .header-bottom-left{
+            width: 25%;
+            text-align: center;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                border-top: solid 20px #fff;
+                border-right: solid 20px transparent;
+                border-bottom: solid 20px transparent;
+                border-left: solid 20px transparent;
+                top: 100%; //父元素高度的100%
+                right: 50%;
+                transform: translate(50%);
+            }
+        }
+
+        .header-bottom-right {
+            width: 75%;
+            text-align: right;
+            margin-right: 40px;
+            img {
+                width: 30px;
+                height: 20px;
+                margin: 0 10px;
+            }
+        }
+    }
+
+}
